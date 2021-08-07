@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: black;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .sect_part {
+            width: 20%;
+            float: left;
+            border-radius: 10px;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            border: 2px solid #ddd8d8;
+        }
+
+        .button_con {
+            margin-bottom: 3px;
+
+        }
+
+        .button_con .btn {
+            width: 60%;
+            margin-bottom: 6px;
+
+        }
+
+        .image_container {
+            overflow: hidden;
+        }
+
+        @media screen and (max-width:653px) {
+
+            .sect_part {
+                width: 80%;
+                float: none;
+
+                margin-left: 10%;
+                margin-bottom: 30px;
+                margin-right: 10%;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+
+    <div class="container py-3">
+
+        <div class="sect_part">
+
+            <div class="image_container">
+                <div class="targgeting animate__animated animate__fadeInLeftBig" id="first"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgeting animate__animated animate__fadeInLeftBig" id="second"><img src="one.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgeting animate__animated animate__fadeInLeftBig" id="third"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgeting animate__animated animate__fadeInLeftBig" id="fourth"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+            </div>
+
+            <!-- it is button right now  -->
+            <div class="text-center py-2 button_con">
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button" onclick="First(event,'first')"
+                    id="defaultOpen_first">first</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="First(event,'second')">second</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="First(event,'third')">third</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="First(event,'fourth')">fourrth</button>
+            </div>
+        </div>
+
+
+        <!-- second -->
+
+
+        <div class="sect_part">
+
+            <div class="image_container">
+                <div class="targgetingtwo animate__animated animate__fadeInLeftBig" id="tfirst"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingtwo animate__animated animate__fadeInLeftBig" id="tsecond"><img src="one.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingtwo animate__animated animate__fadeInLeftBig" id="tthird"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingtwo animate__animated animate__fadeInLeftBig" id="tfourth"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+            </div>
+
+            <!-- it is button right now  -->
+            <div class="text-center py-2 button_con">
+                <button class="btn btn-outline-primary btn-sm rounded-pill two_button" onclick="two(event,'tfirst')"
+                    id="defaultOpen_two">first</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill two_button"
+                    onclick="two(event,'tsecond')">second</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill two_button"
+                    onclick="two(event,'tthird')">third</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill two_button"
+                    onclick="two(event,'tfourth')">fourrth</button>
+            </div>
+        </div>
+        <!-- third  -->
+        <div class="sect_part">
+
+            <div class="image_container">
+                <div class="targgetingthree animate__animated animate__fadeInLeftBig" id="thfirst"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingthree animate__animated animate__fadeInLeftBig" id="thsecond"><img src="one.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingthree animate__animated animate__fadeInLeftBig" id="ththird"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingthree animate__animated animate__fadeInLeftBig" id="thfourth"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+            </div>
+
+            <!-- it is button right now  -->
+            <div class="text-center py-2 button_con">
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="third(event,'thfirst')" id="defaultOpen_three">first</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="third(event,'thsecond')">second</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="third(event,'ththird')">third</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="third(event,'thfourth')">fourrth</button>
+            </div>
+        </div>
+        <!-- fourth -->
+        <div class="sect_part">
+
+            <div class="image_container">
+                <div class="targgetingfourth animate__animated animate__fadeInLeftBig" id="ffirst"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingfourth animate__animated animate__fadeInLeftBig" id="fsecond"><img src="one.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingfourth animate__animated animate__fadeInLeftBig" id="fthird"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+                <div class="targgetingfourth animate__animated animate__fadeInLeftBig" id="ffourth"><img src="two.png"
+                        style="width: 100%; height: auto;" alt=""></div>
+            </div>
+
+            <!-- it is button right now  -->
+            <div class="text-center py-2 button_con">
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="Fourth(event,'ffirst')" id="defaultOpen_fourth">first</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="Fourth(event,'fsecond')">second</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="Fourth(event,'fthird')">third</button>
+                <br>
+                <button class="btn btn-outline-primary btn-sm rounded-pill first_button"
+                    onclick="Fourth(event,'ffourth')">fourrth</button>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- scripting to controling this  -->
+    <script>
+        // it is mean code for less coding porpose 
+        function driver_code(evt, number, targeting, buttonTarget) {
+            var i;
+
+            for (i = 0; i < targeting.length; i++) {
+                targeting[i].style.display = "none";
+
+            }
+
+            for (i = 0; i < buttonTarget.length; i++) {
+                buttonTarget[i].className = buttonTarget[i].className.replace(" active", "");
+            }
+            document.getElementById(number).style.display = "block";
+            evt.currentTarget.className += " active";
+
+        }
+
+
+
+
+
+        // first 
+        function First(event, number) {
+            var targeting, buttonTarget;
+            targeting = document.getElementsByClassName("targgeting");
+            buttonTarget = document.getElementsByClassName("first_button");
+            driver_code(event, number, targeting, buttonTarget)
+        }
+        document.getElementById("defaultOpen_first").click();
+        // second 
+        function two(event, number) {
+            var targeting, buttonTarget;
+            targeting = document.getElementsByClassName("targgetingtwo");
+            buttonTarget = document.getElementsByClassName("two_button");
+            driver_code(event, number, targeting, buttonTarget)
+
+        }
+        document.getElementById("defaultOpen_two").click();
+        // third 
+        function third(event, number) {
+            var targeting, buttonTarget;
+            targeting = document.getElementsByClassName("targgetingthree");
+            buttonTarget = document.getElementsByClassName("three_button");
+            driver_code(event, number, targeting, buttonTarget)
+
+        }
+        document.getElementById("defaultOpen_three").click();
+        // fourth
+        function Fourth(event, number) {
+            var targeting, buttonTarget;
+            targeting = document.getElementsByClassName("targgetingfourth");
+            buttonTarget = document.getElementsByClassName("fourth_button");
+            driver_code(event, number, targeting, buttonTarget)
+
+        }
+        document.getElementById("defaultOpen_fourth").click();
+
+    </script>
+
+
+
+</body>
+
+</html>

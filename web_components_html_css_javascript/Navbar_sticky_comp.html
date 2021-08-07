@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- **************   ************** **************  **************** -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--**** whenevr you goning to use of this in php  so u can remove it ****-->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        /* css of this hole header part we have css of this as asolute part  */
+        header {
+            position: absolute;
+            top: 0px;
+            z-index: 20;
+
+            width: 100%;
+            /* background: black; */
+            overflow: auto;
+
+        }
+
+        .tag_and_mob_holder {
+            width: 24%;
+            background: black;
+            line-height: 40px;
+        }
+
+        #tag_holder {
+            position: relative;
+            width: 76%;
+            background: black;
+            line-height: 40px;
+        }
+
+        header .tag_and_mob_holder #tag_holder {
+            float: left;
+
+        }
+
+        #tag_holder {
+            line-height: 40px;
+        }
+
+        #tag_holder>li {
+            float: left;
+            width: 100px;
+            list-style: none;
+            background-color: rgba(27, 26, 26, 0.946);
+            border: 2px solid rgb(133, 133, 137);
+            text-align: center;
+            padding: 3px 10px 3px 10px;
+            margin-left: 20px;
+            line-height: 30px;
+            color: white;
+
+            margin-bottom: 5px;
+            border-radius: 3px;
+            margin-top: 5px;
+            transition: all, 0.7s ease-in-out;
+        }
+
+        #tag_holder>li:hover {
+            background-image: linear-gradient(to bottom, rgba(27, 26, 26, 0.946), #5f5c5c);
+        }
+
+
+
+        header nav {
+            float: left;
+        }
+
+        /* mobile icon hnadling in style  */
+        #mobo {
+            cursor: pointer;
+            margin-left: 15px;
+            font-weight: bolder;
+            font-size: 17px;
+            color: rgb(233, 220, 220);
+            line-height: 40px;
+            visibility: hidden;
+
+
+        }
+
+        /* search bar */
+
+        #search {
+            position: absolute;
+            right: 12%;
+            top: 4.5px;
+            z-index: 4;
+
+        }
+
+        #search input[type="search"] {
+            outline: none;
+            border: none;
+
+            color: rgb(88, 85, 85);
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            padding: 4px 4px 4px;
+        }
+
+        #search input[type="submit"] {
+            outline: none;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            padding: 4px 4px 4px;
+            border: none;
+
+        }
+
+        /* sticky css  */
+        .sticky_nav {
+            position: fixed;
+            top: 0px;
+            transition: all, 0.8s ease-in-out;
+        }
+
+        @media screen and (max-width:1465px) {
+            header {
+                position: relative;
+                width: 100%;
+                background: transparent;
+            }
+
+            header .tag_and_mob_holder #tag_holder {
+                float: none;
+
+            }
+
+            /* again search bar set at the header part  */
+            #search {
+                position: absolute;
+                right: 12%;
+                top: 3px;
+
+            }
+
+            /*  finished here the search bar css right now  */
+            .tag_and_mob_holder {
+                width: 100%;
+
+
+            }
+
+            #tag_holder>li {
+
+                line-height: 24px;
+                margin-bottom: 8px;
+
+                margin-top: 8px;
+
+            }
+
+            #tag_holder {
+                height: 100vh;
+                position: unset;
+                overflow: scroll;
+                opacity: 0.8;
+                width: 0%;
+                overflow: hidden;
+                background: black;
+                line-height: 40px;
+                transition: all, 0.4s ease-in-out;
+
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            #tag_holder>li {
+                width: 80%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            /* mobile icon style as responsive  */
+            #mobo {
+                visibility: visible;
+            }
+
+            /* it is css for the logo */
+            #logo_image {
+                display: none;
+            }
+
+            #img_tag {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="sticky">
+        <nav class="tag_and_mob_holder">
+            <!-- atg image and mobo icon here  -->
+            <div style="line-height: 50px;"> <img id="img_tag" src="set.jpeg"
+                    style="height:48px; position: absolute; left: 38px; width:auto " alt=""><a id="mobo">&#9776;</a>
+                </span>
+                <script>
+                    var previous = window.pageYOffset;
+                    window.onscroll = function () {
+                        var current = window.pageYOffset;
+                        var this_sticky = document.getElementById("sticky");
+
+                        if (current <= previous) {
+                            this_sticky.classList.add("sticky_nav");
+
+                        }
+                        else {
+                            this_sticky.classList.remove("sticky_nav");
+                        }
+                        previous = current;
+
+
+                    }
+                </script>
+                <script>
+                    document.getElementById("mobo").addEventListener("click", myFunction_mobo);
+                    function myFunction_mobo() {
+                        var get_this = document.getElementById("tag_holder");
+                        if (get_this.style.width === "0%") {
+                            get_this.style.width = "60%";
+                        }
+                        else {
+                            get_this.style.width = "0%";
+                        }
+                    }
+                </script>
+
+        </nav>
+        <!-- it is the button hodler right now  -->
+        <nav id="tag_holder" class="tag_holder">
+            <li>abhijeet</li>
+            <li>abhijeet</li>
+            <li>abhijeet</li>
+            <li>abhijeet</li>
+            <li>abhijeet</li>
+            <li>abhijeet</li>
+
+            <span id="search">
+                <form action=""><span><input type="search" placeholder="Search .."><input type="submit"
+                            value="OK"></span></form>
+            </span>
+        </nav>
+
+
+    </header>
+
+
+    <!-- domy text  -->
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. A minus possimus excepturi soluta tenetur laboriosam,
+    tempora dolore quae suscipit nesciunt sit iusto saepe perspiciatis rem animi fugit facere id provident libero
+    delectus? Repudiandae eius placeat necessitatibus veritatis fuga delectus doloribus pariatur mollitia perferendis.
+    Iure accusantium modi fuga est natus laudantium ipsa repellat necessitatibus consectetur tempore, culpa reiciendis
+    dicta incidunt earum eligendi quis esse quibusdam, deserunt maxime porro ipsam consequuntur ea iste labore!
+    Laudantium nobis ullam similique laborum quisquam itaque facere fugiat ut assumenda velit eius ducimus architecto
+    magni repellendus dolorem, asperiores, pariatur unde repudiandae expedita deserunt id libero? Eius, delectus
+    provident corporis ipsa nostrum et cupiditate enim voluptatum voluptas iusto voluptatibus, eveniet adipisci nihil
+    rerum recusandae. Asperiores labore ullam consequatur saepe ad omnis soluta eius nulla nesciunt sint, perferendis
+    fugit laborum aspernatur delectus mollitia nam, modi deserunt et pariatur esse minima. Est maxime similique esse
+    delectus omnis architecto vitae consequatur ipsum ullam minima fuga fugit facilis at quod, cupiditate, iste minus
+    nisi ad error ab aliquam consectetur! Alias impedit eveniet esse dolor aperiam, architecto cumque assumenda dolore
+    soluta debitis, aliquid ad modi dignissimos officiis vel ea nemo, accusantium perferendis sapiente unde. Neque illum
+    possimus tempora in eligendi assumenda officia odio blanditiis quibusdam. Aliquam, dignissimos eum tenetur
+    distinctio quia nostrum soluta eaque omnis, deserunt ad recusandae quam facere tempora atque hic repellendus. Iure
+    reiciendis quae provident cupiditate saepe. Provident, doloribus ab. Temporibus officia aliquam molestias officiis
+    tempore sequi illum modi debitis dignissimos deserunt voluptas, libero facere quas odit consectetur iusto quod
+    voluptatem? Assumenda nisi ab velit nihil. Itaque dolorem consectetur dolores facilis cum rerum similique obcaecati
+    animi iste harum suscipit, culpa inventore et numquam illo nostrum natus ipsam velit optio nihil! Dolorem nisi
+    cumque distinctio non repellendus quos aliquam quisquam dolorum odit voluptatem! Quam neque, eaque provident quis
+    aliquam dolores vitae nisi dolor vel quas, magni tempore aut voluptas sint! Blanditiis vel repudiandae dignissimos
+    autem ratione dolorem, magnam cum odio ipsa provident laboriosam. Aliquam labore, nemo, dolorum similique cumque ut
+    molestiae dolorem cupiditate, velit corrupti eius porro animi nostrum accusantium. Qui assumenda sunt, quis
+    voluptatem cum optio magnam nesciunt. Voluptatibus recusandae facilis temporibus? Ipsa nesciunt, suscipit natus
+    excepturi veniam molestiae voluptatibus consequuntur accusantium modi blanditiis facilis eius ipsam harum quisquam
+    recusandae ad officiis quae est? Maxime doloribus totam id explicabo obcaecati eos, quas possimus. Neque deserunt
+    magnam quod voluptates, quo delectus possimus esse dolorem voluptate rem, vel ratione ex totam, aliquid dolorum
+    debitis dolor accusamus. Temporibus sequi ut earum, nam consectetur odio rem, in consequuntur repellat natus soluta
+    voluptates vel dolorum adipisci dolore illum nihil ipsum dolor delectus? Minima iusto adipisci cumque quidem, illum
+    repudiandae consequuntur facere animi atque est numquam officiis aut voluptate dolores? Repudiandae et nihil
+    excepturi nostrum quia laudantium? Quasi corrupti iure fuga laudantium ipsa reprehenderit, repellendus accusamus
+    esse voluptates, ipsum ex saepe nisi? Deleniti eum maiores, eos dolore ipsa enim nihil placeat obcaecati
+    reprehenderit omnis. Ducimus assumenda ipsam aspernatur. Velit placeat magnam mollitia quisquam dicta labore fuga,
+    ipsum sequi iste nulla autem possimus facere beatae, eos eius. Commodi sed modi voluptate. Explicabo eligendi
+    nostrum laborum quidem voluptas, tempore totam fuga reiciendis nihil ducimus tempora aliquam distinctio ipsa nemo
+    ullam dolor vel atque magnam voluptate? Incidunt libero molestiae sequi error blanditiis? Incidunt temporibus
+    deserunt architecto eligendi omnis eveniet fuga asperiores quas, distinctio quam accusantium? Minima, tempore
+    consequuntur? Autem, nihil sunt quo quos culpa incidunt perspiciatis cupiditate dolor nemo officia alias maiores
+    odio minus omnis dolorum impedit nesciunt iste inventore obcaecati a cumque saepe repellat! Facere optio officia
+    consequatur expedita unde asperiores esse minus excepturi, dignissimos voluptatum blanditiis cum nulla quibusdam
+    beatae doloribus deleniti animi similique totam a incidunt culpa. Labore molestias dolor esse ipsum quia cum rem,
+    maiores quam in. Atque sunt quaerat at excepturi rerum corporis quisquam quibusdam nihil dolorum earum commodi ex
+    magni hic pariatur, itaque porro doloribus suscipit tenetur quos nesciunt! Nemo, nobis! Odit exercitationem
+    molestiae quaerat vel cumque quis temporibus, expedita sapiente! Reiciendis nulla dolorum dolore, tenetur architecto
+    fuga accusamus voluptate. Amet harum ab reprehenderit atque molestias. Labore beatae placeat nam neque, suscipit
+    facilis similique ex eum temporibus. Provident laudantium corporis sunt laborum ipsa animi consequuntur ducimus
+    commodi amet. Perspiciatis vel delectus ipsa eius debitis? Beatae, voluptatibus assumenda. Eius ipsa impedit rerum
+    soluta ad incidunt atque dolore non in porro ipsum ratione sed dolorem suscipit quas tempora exercitationem
+    molestias, esse ut? Ducimus aspernatur a aliquid inventore nulla dicta illum quibusdam deleniti pariatur modi quidem
+    officia tempora laborum, commodi eos numquam. Laborum dolorem pariatur illo laboriosam expedita nesciunt provident
+    soluta aspernatur numquam? Non, ut quae eaque, aspernatur, consectetur commodi hic at dignissimos quia magnam
+    voluptas labore? Error animi impedit aperiam quas laudantium odio non facilis doloremque aspernatur velit sed sint
+    quo eveniet eos architecto dolor, itaque voluptatum illum esse quae debitis minus recusandae voluptas nesciunt?
+    Saepe sit similique placeat culpa minus dolor tempora adipisci, in provident mollitia id et nesciunt omnis.
+    Voluptates hic cumque possimus maiores quaerat ab nulla voluptatibus voluptatum quam. Voluptate autem ducimus
+    aliquam? Provident necessitatibus numquam ipsum rem eveniet officiis fugit officia consequatur, nisi perferendis!
+    Temporibus dolores debitis nemo maxime! Nulla explicabo quibusdam repellat blanditiis dolore nihil vero, quam
+    inventore sequi possimus accusantium eaque nobis, laboriosam, corporis aliquam error? Perspiciatis at dignissimos
+    fuga porro quidem necessitatibus reiciendis laborum debitis quibusdam ullam! Doloribus mollitia deserunt dolorum
+    deleniti ducimus doloremque fugit vitae, veritatis dolore culpa aut voluptatum soluta quidem obcaecati cupiditate
+    aliquid eveniet facilis minima. A quas nobis sed nesciunt, accusantium ut veniam laborum esse ratione. Nulla
+    molestiae voluptatum voluptas officia expedita sit iure nisi, debitis at architecto dolores assumenda quasi sed
+    quidem, officiis sint omnis laudantium et in eos distinctio facilis quibusdam consectetur! Sed in voluptates eos
+    laborum possimus esse deleniti nostrum nulla ducimus odio reiciendis atque ex ullam eius quisquam quas, laboriosam
+    rerum ad nobis repellendus totam. Quae aliquam ex nam enim a id ducimus, consequuntur nisi illum veniam fugiat
+    laborum et? Quisquam consectetur ipsum officiis esse, consequuntur laudantium molestias nihil laborum, debitis magni
+    nisi modi ducimus magnam iure quam aut fuga ipsam aperiam velit reprehenderit doloribus ullam rerum! Sit, eius rem?
+</body>
+
+</html>
